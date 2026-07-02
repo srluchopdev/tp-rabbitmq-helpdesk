@@ -1,0 +1,15 @@
+{
+  "name": "tp-rabbitmq-helpdesk",
+  "version": "1.0.0",
+  "description": "TP Integración de Aplicaciones - Comunicación por eventos con RabbitMQ (mesa de ayuda)",
+  "type": "commonjs",
+  "scripts": {
+    "api": "node src/api-service.js",
+    "worker:assign": "node src/assignment-worker.js",
+    "worker:audit": "node src/audit-worker.js"
+  },
+  "dependencies": {
+    "amqplib": "^0.10.4",
+    "express": "^4.19.2"
+  }
+}
