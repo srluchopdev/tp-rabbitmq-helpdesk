@@ -124,14 +124,6 @@ Se puede verificar en Management → pestañas **Exchanges** y **Queues**.
 | `data/metrics.json` | Tickets creados por día |
 | `data/processed-events.json` | eventIds ya procesados (idempotencia) |
 
-## Evidencia de prueba
-
-Adjuntar en la entrega:
-
-- Captura de las tres consolas mostrando el flujo `ticket.created → ticket.assigned → auditoría`.
-- Captura de RabbitMQ Management (Queues) mostrando `helpdesk.assignment`, `helpdesk.audit` y `helpdesk.errors` con el mensaje del ticket critical.
-- Contenido de `data/audit-log.jsonl` y `data/metrics.json`.
-
 ## Notas de diseño
 
 - **Ack manual:** cada worker hace `channel.ack(msg)` solo cuando el procesamiento terminó bien. Si el worker muere en el medio, RabbitMQ reentrega el mensaje.
